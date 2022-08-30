@@ -97,11 +97,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menCadUse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         menCadUse.setText("Usuários");
+        menCadUse.setEnabled(false);
         menCadCli.add(menCadUse);
 
         Menu.add(menCadCli);
 
         menHelp.setText("Relatório");
+        menHelp.setEnabled(false);
 
         menRelServ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
         menRelServ.setText("Serviços");
@@ -113,6 +115,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menAjuSob.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_DOWN_MASK));
         menAjuSob.setText("Sobre");
+        menAjuSob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menAjuSobActionPerformed(evt);
+            }
+        });
         menAju.add(menAjuSob);
 
         Menu.add(menAju);
@@ -192,6 +199,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menOpcSaiActionPerformed
 
+    private void menAjuSobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAjuSobActionPerformed
+       TelaSobre sobre = new TelaSobre();
+       sobre.setVisible(true);
+    }//GEN-LAST:event_menAjuSobActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,14 +244,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblData;
-    private javax.swing.JLabel lblUsuario;
+    public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenu menAju;
     private javax.swing.JMenuItem menAjuSob;
     private javax.swing.JMenu menCadCli;
     private javax.swing.JMenuItem menCadOs;
-    private javax.swing.JMenuItem menCadUse;
+    public static javax.swing.JMenuItem menCadUse;
     private javax.swing.JMenuItem menCli;
-    private javax.swing.JMenu menHelp;
+    public static javax.swing.JMenu menHelp;
     private javax.swing.JMenu menOpc;
     private javax.swing.JMenuItem menOpcSai;
     private javax.swing.JMenuItem menRelServ;
